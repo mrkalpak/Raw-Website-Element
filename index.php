@@ -13,11 +13,18 @@
     crossorigin="anonymous"></script>
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+  <script src="./js/firebase.js" type="module"></script>
+  <script type="module">
+    import { ItemClick } from './js/mainpage.js';
+    import { getdata } from './js/mainpage.js';
+   window.ItemClick=ItemClick;
+   window.getdata=getdata;
+  </script>
 </head>
 
-<body>
-
-
+<body onload="getdata(1)">
+ 
   <div class="wrappers">
     <!-- Sidebar  -->
     <nav id="sidebar">
@@ -25,25 +32,15 @@
             <h3>Element Example</h3>
         </div>
 
-        <ul class="list-unstyled components">
+        <ul class="list-unstyled components" id="navitems">
           
-            <li>
-                <a href="#">Card</a>
-            </li>
-            
-            <li>
-                <a href="#">Portfolio</a>
-            </li>
-            <li>
-                <a href="#">Contact</a>
-            </li>
         </ul>
 
         
     </nav>
 
   
-   
+   <!-- <button onclick="getCount()" id="b1">heye</button> -->
    
     <iframe id="mainFrame" src="./home.php" frameborder="0" width="100%" height="100%" >
     </iframe>
